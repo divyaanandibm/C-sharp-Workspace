@@ -1,0 +1,34 @@
+using System;
+enum TrafficLight
+{
+    Red,
+    Yellow,
+    Green,
+}
+
+class Program
+{
+    public static void Main()
+    {
+        TrafficLight currentLight = TrafficLight.Red;
+        string action = "";
+        if (currentLight == TrafficLight.Red)
+        {
+            action = "Niruthugal";
+        }
+        else if (currentLight == TrafficLight.Yellow)
+        {
+            action = "Porumaiya niruthugal";
+        }
+        else if (currentLight == TrafficLight.Green)
+        {
+            action = "Polam";
+        }
+        else
+        {
+            action = "Unknown signal";
+        }
+        Console.WriteLine($"Light: {currentLight}"); 
+        Console.WriteLine($"Action: {action}");
+    }
+}

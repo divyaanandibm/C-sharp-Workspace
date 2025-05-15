@@ -1,0 +1,38 @@
+using System;
+enum WeatherType
+{
+    Sunny,
+    Rainy,
+    Snowy,
+    Windy,
+}
+class Program
+{
+    static void Main()
+    {
+        WeatherType currentWeather = WeatherType.Sunny;
+        string suggestion = "";
+        if (currentWeather == WeatherType.Sunny)
+        {
+            suggestion = "erithadi maaala";
+        }
+        else if (currentWeather == WeatherType.Rainy)
+        {
+            suggestion = "malai varuthu kodai kondu va";
+        }
+        else if (currentWeather == WeatherType.Snowy)
+        {
+            suggestion = "bedsheet potu thoogu";
+        }
+        else if (currentWeather == WeatherType.Windy)
+        {
+            suggestion = "malai vara pothuuu";
+        }
+        else
+        {
+            suggestion = "No suggestion available";
+        }
+        Console.WriteLine($"Weather:{currentWeather}");
+        Console.WriteLine($"Suggestion:{suggestion}");
+    }
+}

@@ -1,0 +1,36 @@
+using System;
+enum AgeGroup
+{
+    Child,
+    Adult,
+    Senior,
+}
+class Program
+{
+    static decimal TicketPrice(AgeGroup ageGroup)
+    {
+        if (ageGroup == AgeGroup.Child)
+        {
+            return 100.00m;
+        }
+        else if (ageGroup == AgeGroup.Adult)
+        {
+            return 150.00m;
+        }
+        else if (ageGroup == AgeGroup.Senior)
+        {
+            return 200.00m;
+        }
+        else
+        {
+            return 0.00m;
+        }
+    }
+    static void Main()
+    {
+        AgeGroup group = AgeGroup.Senior;
+        decimal price = TicketPrice(group);
+        Console.WriteLine($"Age Group: {group}");
+        Console.WriteLine($"Ticket Price: Rupees {price}");
+    }
+}
