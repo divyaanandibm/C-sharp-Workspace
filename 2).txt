@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int score = 45;
+        int[] marks = { 90, 80, 70, 60, 0 };
+        string[] grades = { "Grade: A", "Grade: B", "Grade: C", "Grade: D", "Grade: F" };
+        for (int i = 0; i < marks.Length; i++)
+        {
+            if (score >= marks[i])
+            {
+                Console.WriteLine(grades[i]);
+                break;
+            }
+        }
+    }
+}
