@@ -1,0 +1,48 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter total units consumed: ");
+        string input = Console.ReadLine();
+
+        int units = StringToInt(input);
+
+        if (units < 0)
+        {
+            Console.WriteLine("Invalid input!");
+            return;
+        }
+        int rate = 0;
+        if (units <= 100)
+        {
+            rate = 1;
+        }
+        else if (units <= 200)
+        {
+            rate = 2;
+        }
+        else if (units <= 300)
+        {
+            rate = 3;
+        }
+        else
+        {
+            rate = 5;
+        }
+        int totalBill = units * rate;
+        Console.WriteLine($"Ithana Units : {units}");
+        Console.WriteLine($"Ivlo kaasu: {rate} per unit");
+        Console.WriteLine($"Motham thogai: {totalBill}");
+    }
+    static int StringToInt(string input)
+    {
+        int result = 0;
+        foreach (char c in input)
+        {
+            if (c < '0' || c > '9') return -1;
+            result = result * 10 + (c - '0');
+        }
+        return result;
+    }
+}
