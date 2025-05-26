@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 1, 5, 4, 2, 34, 7, 8, 12 };
+        Dictionary<int, int> dict = new Dictionary<int, int>();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            dict[i] = arr[i];
+        }
+        foreach (var pair in dict)
+        {
+            if (pair.Value > 10)
+            {
+                Console.WriteLine($"First element greater than 10 is: {pair.Value} at index {pair.Key}");
+                break;
+            }
+        }
+    }
+}

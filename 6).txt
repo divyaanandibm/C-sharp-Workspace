@@ -1,0 +1,59 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the purchase amount: ");
+        string input = Console.ReadLine();
+        int amount = StringToInt(input);
+
+        if (amount < 0)
+        {
+            Console.WriteLine("Invalid input!");
+            return;
+        }
+        int category = amount switch
+        {
+            >= 10000 => 3,
+            >= 5000 => 2,
+            >= 1000 => 1,
+            _ => 0
+        };
+        double discountPercentage;
+        switch (category)
+        {
+            case 0:
+                discountPercentage = 0;
+                break;
+            case 1:
+                discountPercentage = 5;
+                break;
+            case 2:
+                discountPercentage = 10;
+                break;
+            case 3:
+                discountPercentage = 15;
+                break;
+            default:
+                discountPercentage = 0;
+                break;
+        }
+
+        double discountAmount = amount * discountPercentage / 100;
+        double finalAmount = amount - discountAmount;
+
+        Console.WriteLine($"Purchase Amount: {amount}");
+        Console.WriteLine($"Discount: {discountPercentage}% ({discountAmount})");
+        Console.WriteLine($"Amount to Pay: {finalAmount}");
+    }
+    static int StringToInt(string input)
+    {
+        int result = 0;
+        foreach (char c in input)
+        {
+            if (c < '0' || c > '9') return -1;
+            result = result * 10 + (c - '0');
+        }
+        return result;
+    }
+}
