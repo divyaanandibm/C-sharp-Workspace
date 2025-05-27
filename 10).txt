@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3,1,2,2,3 };
+        Dictionary<int, int> frequency = new Dictionary<int, int>();
+        foreach (int num in numbers)
+        {
+            if (frequency.ContainsKey(num))
+                frequency[num]++;
+            else
+                frequency[num] = 1;
+        }
+        foreach (var pair in frequency)
+        {
+            if (pair.Value > 1)
+                Console.WriteLine($"Element {pair.Key} occurs {pair.Value} times");
+        }
+    }
+}
