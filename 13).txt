@@ -1,0 +1,55 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter your years of experience: ");
+        string input = Console.ReadLine();
+        bool isNumber = true;
+        foreach (char ch in input)
+        {
+            if (ch < '0' || ch > '9')
+            {
+                isNumber = false;
+                break;
+            }
+        }
+        if (!isNumber || input == "")
+        {
+            Console.WriteLine("Invalid input");
+        }
+        else
+        {
+            int years = 0;
+            foreach (char ch in input)
+            {
+                years = years * 10 + (ch - '0');
+            }
+            Console.Write("Enter your job title: ");
+            string job = Console.ReadLine();
+            if (job == "developer" || job == "designer" || job == "manager")
+            {
+                switch (years)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                        Console.WriteLine("Incentive: Rupees 1,000");
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        Console.WriteLine("Incentive: Rupees 3,000");
+                        break;
+                    default:
+                        Console.WriteLine("Incentive: Rupees 5,000 + additional incentives");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid job title.");
+            }
+        }
+    }
+}

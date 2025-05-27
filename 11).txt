@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> {  5, 3, 9, 1, 7, 2, 8 };
+        if (numbers.Count == 0)
+        {
+            Console.WriteLine("The list is empty.");
+            return;
+        }
+        int max = numbers[0];
+        int min = numbers[0];
+        for (int i = 1; i < numbers.Count; i++)
+        {
+            if (numbers[i] > max)
+                max = numbers[i];
+            if (numbers[i] < min)
+                min = numbers[i];
+        }
+        Console.WriteLine($"Maximum element: {max}");
+        Console.WriteLine($"Minimum element: {min}");
+    }
+}

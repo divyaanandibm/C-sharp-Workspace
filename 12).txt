@@ -1,0 +1,29 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the name of a fruit ");
+        string fruit = Console.ReadLine();
+        if (fruit == null || fruit == "")
+        {
+            Console.WriteLine("You did not enter anything.");
+        }
+        else if (fruit == "apple")
+        {
+            Console.WriteLine("Apples are sivapu.");
+        }
+        else if (fruit == "banana")
+        {
+            Console.WriteLine("Bananas are manjal.");
+        }
+        else if (fruit == "orange")
+        {
+            Console.WriteLine("Oranges are orange");
+        }
+        else
+        {
+            Console.WriteLine("Unknown fruit.");
+        }
+    }
+}
