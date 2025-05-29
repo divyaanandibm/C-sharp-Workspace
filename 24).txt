@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 4, 7, 2, 9, 10, 3, 6, 5, 8, 1 };
+        int evenSum = 0;
+        int oddSum = 0;
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            if (numbers[i] % 2 == 0)
+                evenSum += numbers[i];
+            else
+                oddSum += numbers[i];
+        }
+        Console.WriteLine("Even numbers: " + evenSum);
+        Console.WriteLine("Odd numbers: " + oddSum);
+    }
+}
+

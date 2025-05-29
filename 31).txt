@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 0, 1, 2, 0, 4, 0, 6, 7, 0, 9 };
+        int zeroCount = 0;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] == 0)
+            {
+                zeroCount++;
+            }
+        }
+        Console.WriteLine(zeroCount);
+    }
+}

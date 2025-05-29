@@ -1,0 +1,22 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 3, 7, 1, 9, 5, 4 };
+        int userNumber = int.Parse(Console.ReadLine());
+        bool found = false;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] == userNumber)
+            {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+            Console.WriteLine("Number found in the array.");
+        else
+            Console.WriteLine("Number not found in the array.");
+    }
+}

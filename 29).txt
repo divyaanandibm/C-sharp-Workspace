@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 12, 7, 19, 3, 25, 10 };
+        int smallest = numbers[0];
+        for (int i = 1; i < numbers.Count; i++)
+        {
+            if (numbers[i] < smallest)
+                smallest = numbers[i];
+        }
+        Console.WriteLine(smallest);
+    }
+}

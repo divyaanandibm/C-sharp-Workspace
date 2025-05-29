@@ -1,0 +1,23 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        string input = "hello world";
+        int[] freq = new int[26]; 
+        foreach (char c in input)
+        {
+            if (c >= 'a' && c <= 'z')
+            {
+                freq[c - 'a']++;
+            }
+        }
+        for (int i = 0; i < 26; i++)
+        {
+            if (freq[i] > 0)
+            {
+                Console.WriteLine($"Character '{(char)(i + 'a')}' appears {freq[i]} times.");
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 4, 2, 7, 4, 2, 4, 9, 2, 2 };
+        int[] freq = new int[101]; 
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            freq[numbers[i]]++;
+        }
+        int maxFreq = 0;
+        int mostFrequent = numbers[0];
+        for (int i = 0; i < freq.Length; i++)
+        {
+            if (freq[i] > maxFreq)
+            {
+                maxFreq = freq[i];
+                mostFrequent = i;
+            }
+        }
+        Console.WriteLine($"Most frequent element: {mostFrequent}");
+    }
+}
