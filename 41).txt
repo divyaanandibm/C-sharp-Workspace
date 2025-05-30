@@ -1,0 +1,20 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        TemperatureCheck();
+    }
+
+    static void TemperatureCheck()
+    {
+        Console.Write("Enter temperature in °C: ");
+        double temp = double.Parse(Console.ReadLine());
+
+        if (temp > 30)
+            Console.WriteLine("Hot day");
+        else
+            Console.WriteLine("Cool day");
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        AgeCategory();
+    }
+
+    static void AgeCategory()
+    {
+        Console.Write("Enter the person's age: ");
+        int age = int.Parse(Console.ReadLine());
+
+        if (age >= 0 && age <= 12)
+            Console.WriteLine("Child");
+        else if (age >= 13 && age <= 19)
+            Console.WriteLine("Teenager");
+        else if (age >= 20 && age <= 64)
+            Console.WriteLine("Adult");
+        else if (age >= 65)
+            Console.WriteLine("Senior");
+        else
+            Console.WriteLine("Invalid age entered");
+    }
+}

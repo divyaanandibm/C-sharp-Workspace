@@ -1,0 +1,25 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        ConvertStringInput();
+    }
+    static void ConvertStringInput()
+    {
+        Console.Write("Enter an integer value: ");
+        string inputInt = Console.ReadLine();
+        int intValue = int.Parse(inputInt);
+        Console.WriteLine("Integer: " + intValue);
+
+        Console.Write("Enter a double value: ");
+        string inputDouble = Console.ReadLine();
+        double doubleValue = double.Parse(inputDouble);
+        Console.WriteLine("Double: " + doubleValue);
+
+        Console.Write("Enter a boolean value (true/false): ");
+        string inputBool = Console.ReadLine();
+        bool boolValue = bool.Parse(inputBool);
+        Console.WriteLine("Boolean: " + boolValue);
+    }
+}

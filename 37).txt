@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        CalculateCircumference();
+    }
+    static void CalculateCircumference()
+    {
+        const double PI = 3.14159; 
+        Console.Write("Enter the radius of the circle: ");
+        double radius = double.Parse(Console.ReadLine());
+        double circumference = 2 * PI * radius;
+        Console.WriteLine(circumference);
+    }
+}

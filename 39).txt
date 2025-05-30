@@ -1,0 +1,28 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+       Operators();
+    }
+    static void Operators()
+    {
+        Console.Write("Enter initial value for the variable: ");
+        int x = int.Parse(Console.ReadLine());
+
+        x += 5;
+        Console.WriteLine("After += 5: " + x);
+
+        x -= 3;
+        Console.WriteLine("After -= 3: " + x);
+
+        x *= 2;
+        Console.WriteLine("After *= 2: " + x);
+
+        x /= 4;
+        Console.WriteLine("After /= 4: " + x);
+
+        x %= 3;
+        Console.WriteLine("After %= 3: " + x);
+    }
+}

@@ -1,0 +1,15 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] numbers = { -10, 25, -3, 42, 0, -7, 18, 5 };
+        foreach (int num in numbers)
+        {
+            if (num > 0)
+            {
+                Console.WriteLine(num);
+            }
+        }
+    }
+}
