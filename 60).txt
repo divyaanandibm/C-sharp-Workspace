@@ -1,0 +1,29 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList input = new ArrayList() { 1, "hello", 'a', 2, "world", 'b' };
+
+        List<int> integers = new List<int>();
+        List<string> strings = new List<string>();
+        List<char> chars = new List<char>();
+
+        foreach (var item in input)
+        {
+            if (item is int)
+                integers.Add((int)item);
+            else if (item is string)
+                strings.Add((string)item);
+            else if (item is char)
+                chars.Add((char)item);
+        }
+
+        Console.WriteLine("Integers: " + string.Join(", ", integers));
+        Console.WriteLine("Strings: " + string.Join(", ", strings));
+        Console.WriteLine("Chars: " + string.Join(", ", chars));
+    }
+}

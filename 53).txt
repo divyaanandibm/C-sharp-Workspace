@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int start = 2;
+        int end = 10;
+
+        int count = CountEvenNumbers(start, end);
+
+        Console.WriteLine($"Number of even numbers between {start} and {end}: {count}");
+    }
+    static int CountEvenNumbers(int start, int end)
+    {
+        int count = 0;
+        for (int i = start; i <= end; i++)
+        {
+            if (i % 2 == 0)
+                count++;
+        }
+        return count;
+    }
+}

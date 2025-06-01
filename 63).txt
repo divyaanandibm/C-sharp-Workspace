@@ -1,0 +1,38 @@
+using System;
+
+enum WeatherType
+{
+    Sunny,
+    Rainy,
+    Snowy,
+    Windy
+}
+
+class Program
+{
+    static void Main()
+    {
+        WeatherType weather = WeatherType.Rainy;
+
+        string suggestion = GetSuggestion(weather);
+
+        Console.WriteLine($"Weather: {weather}, Suggestion: {suggestion}");
+    }
+
+    static string GetSuggestion(WeatherType weather)
+    {
+        switch (weather)
+        {
+            case WeatherType.Sunny:
+                return "Sunglasses";
+            case WeatherType.Rainy:
+                return "Umbrella";
+            case WeatherType.Snowy:
+                return "Warm Coat";
+            case WeatherType.Windy:
+                return "Windbreaker";
+            default:
+                return "No suggestion";
+        }
+    }
+}

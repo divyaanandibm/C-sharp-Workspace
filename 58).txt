@@ -1,0 +1,38 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList list1 = new ArrayList() { 1, 2, 3 };
+        ArrayList list2 = new ArrayList() { 3, 4, 5 };
+
+        ArrayList merged = Duplicates(list1, list2);
+
+        Console.WriteLine("Merged list without duplicates:");
+        foreach (var item in merged)
+        {
+            Console.Write(item + " ");
+        }
+    }
+
+    static ArrayList Duplicates(ArrayList list1, ArrayList list2)
+    {
+        ArrayList result = new ArrayList();
+
+        foreach (var item in list1)
+        {
+            if (!result.Contains(item))
+                result.Add(item);
+        }
+
+        foreach (var item in list2)
+        {
+            if (!result.Contains(item))
+                result.Add(item);
+        }
+
+        return result;
+    }
+}

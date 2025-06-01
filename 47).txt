@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string sentence = "Hello World"; 
+        int vowels = 0, consonants = 0;
+
+        foreach (char ch in sentence.ToLower())
+        {
+            if (char.IsLetter(ch))
+            {
+                if ("aeiou".Contains(ch))
+                {
+                    vowels++;
+                }
+                else
+                {
+                    consonants++;
+                }
+            }
+        }
+
+        Console.WriteLine($"Sentence: {sentence}");
+        Console.WriteLine($"Vowels: {vowels}");
+        Console.WriteLine($"Consonants: {consonants}");
+    }
+}

@@ -1,0 +1,23 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList list = new ArrayList() { 'r', 'a', 'c', 'e', 'c', 'a', 'r' };
+
+        bool isPalindrome = true;
+
+        for (int i = 0; i < list.Count / 2; i++)
+        {
+            if (!list[i].Equals(list[list.Count - 1 - i]))
+            {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        Console.WriteLine(isPalindrome);
+    }
+}

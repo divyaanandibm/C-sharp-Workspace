@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Student
+{
+    public string Name { get; set; }
+    public List<double> Grades { get; set; } = new List<double>();
+
+    public double AverageGrade()
+    {
+        if (Grades.Count == 0) return 0;
+        return Grades.Average();
+    }
+}
+
+class Program
+{
+    static List<Student> students = new List<Student>();
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("\nStudent Grades Management System");
+            Console.WriteLine("1. Add student record");
+            Console.WriteLine("2. Calculate average grades");
+            Console.WriteLine("3. Find top student(s)");
+            Console.WriteLine("4. Exit");
+            Console.Write("Choose an option: ");
+
+            string option = Console.ReadLine();
+
+            switch (option)
+            {
+                case "1":
+                    AddStudent();
+                    break;
+                case "2":
+                    CalculateAverages();
+                    break;
+                case "3":
+                    FindTopStudents();
+                    break;
+                case "4":
+                    return;
+                default:
+                    Console.WriteLine("Invalid option. Try again.");
+                    break;
+            }
+        }
+    }
+
+    static void AddStudent()
+    {
+        Console.Write("Enter student name: ");
+        string name = Console.ReadLine();
+
+        Student student = new Student { Name = name };
+
+        Console.WriteLine("Enter grades separated by spaces (e.g. 75 85 90):");
+        string gradesInput = Console.ReadLine();
+        string[] gradesStr = gradesInput.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (var g in gradesStr)
+        {
+            if (double.TryParse(g, out double grade))
+            {
+                student.Grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine($"Invalid grade skipped: {g}");
+            }
+        }
+
+        students.Add(student);
+        Console.WriteLine($"Student {name} added successfully.");
+    }
+
+    static void CalculateAverages()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students added yet.");
+            return;
+        }
+
+        foreach (var student in students)
+        {
+            Console.WriteLine($"{student.Name}: Average Grade = {student.AverageGrade():F2}");
+        }
+    }
+
+    static void FindTopStudents()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students added yet.");
+            return;
+        }
+
+        double maxAverage = students.Max(s => s.AverageGrade());
+        var topStudents = students.Where(s => Math.Abs(s.AverageGrade() - maxAverage) < 0.0001).ToList();
+
+        Console.WriteLine($"Top student(s) with average grade {maxAverage:F2}:");
+        foreach (var student in topStudents)
+        {
+            Console.WriteLine(student.Name);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string text = "hello world";
+        string search = "world";
+
+        int index = text.IndexOf(search);
+
+        if (index != -1)
+        {
+            Console.WriteLine($"'{search}' found at index {index}.");
+        }
+        else
+        {
+            Console.WriteLine($"'{search}' not found in the string.");
+        }
+    }
+}

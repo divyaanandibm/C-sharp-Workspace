@@ -1,0 +1,14 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 12, 5, 8, 19, 5, 3, 7 };
+
+        Array.Sort(arr); 
+        int secondSmallest = arr[1];
+
+        Console.WriteLine($"Second smallest element is: {secondSmallest}");
+    }
+}

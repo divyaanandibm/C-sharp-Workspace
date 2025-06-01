@@ -1,0 +1,35 @@
+using System;
+
+enum AgeGroup
+{
+    Child,
+    Adult,
+    Senior
+}
+
+class Program
+{
+    static void Main()
+    {
+        AgeGroup group = AgeGroup.Adult;
+
+        decimal price = GetTicketPrice(group);
+
+        Console.WriteLine($"Age Group: {group}, Ticket Price: ${price}");
+    }
+
+    static decimal GetTicketPrice(AgeGroup group)
+    {
+        switch (group)
+        {
+            case AgeGroup.Child:
+                return 5.00m;
+            case AgeGroup.Adult:
+                return 10.00m;
+            case AgeGroup.Senior:
+                return 7.00m;
+            default:
+                return 0m;
+        }
+    }
+}
